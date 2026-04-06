@@ -1,22 +1,22 @@
-using UnityEngine;
-using Sirenix.OdinInspector;
-using System.Collections.Generic;
-
 public class ActionNode
 {
-    public List<Color> Colors = new List<Color>() 
-    {Color.cyan, Color.red, Color.yellow, Color.blue, Color.orange, Color.green};
-
     public enum Actions
     {
         Atacar,
         Defender,
         Rebelarse,
         Engañar,
-        mover
+        Mover
     }
 
-    public int Quantity = 5;
+    public Actions currentAction;
+    public ActionNode next;
+
+    public ActionNode(Actions action)
+    {
+        currentAction = action;
+        next = null;
+    }
 }
 
 
